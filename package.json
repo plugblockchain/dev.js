@@ -1,0 +1,30 @@
+{
+  "version": "0.30.0-beta.0",
+  "private": true,
+  "engines": {
+    "node": "^10.13.0",
+    "yarn": "^1.10.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0",
+    "typescript": "^3.4.1"
+  },
+  "scripts": {
+    "build": "plugnet-dev-build-ts && (cd packages/dev && copyfiles config/* scripts/* skeleton/* build) && (cd packages/dev-react && copyfiles config/* scripts/* skeleton/* build) && plugnet-dev-build-docs",
+    "check": "yarn lint",
+    "lint": "tslint --project . && tsc --noEmit --pretty",
+    "clean": "plugnet-dev-clean-build",
+    "plugnet-dev-version-beta": "./packages/dev/scripts/plugnet-dev-version-beta.sh",
+    "plugnet-dev-version-minor": "./packages/dev/scripts/plugnet-dev-version-minor.sh",
+    "plugnet-dev-version-patch": "./packages/dev/scripts/plugnet-dev-version-patch.sh",
+    "postinstall": "./packages/dev/scripts/plugnet-dev-yarn-only.js",
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "copyfiles": "^2.1.0"
+  }
+}

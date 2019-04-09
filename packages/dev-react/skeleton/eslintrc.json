@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "./node_modules/@plugnet/dev-react/config/eslint.js"
+  ]
+}

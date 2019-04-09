@@ -1,0 +1,76 @@
+{
+  "name": "@plugnet/dev",
+  "version": "0.30.0-beta.0",
+  "description": "A collection of shared CI scripts and development environment used by @plugnet projects",
+  "bin": {
+    "plugnet-dev-build-babel": "./scripts/plugnet-dev-build-babel.sh",
+    "plugnet-dev-build-docs": "./scripts/plugnet-dev-build-docs.sh",
+    "plugnet-dev-build-ts": "./scripts/plugnet-dev-build-ts.sh",
+    "plugnet-dev-clean-branches": "./scripts/plugnet-dev-clean-branches.sh",
+    "plugnet-dev-clean-build": "./scripts/plugnet-dev-clean-build.sh",
+    "plugnet-dev-copy-skeleton": "./scripts/plugnet-dev-copy-skeleton.sh",
+    "plugnet-dev-travis-deploy": "./scripts/plugnet-dev-travis-deploy.sh",
+    "plugnet-dev-travis-build": "./scripts/plugnet-dev-travis-build.sh",
+    "plugnet-dev-update-deps": "./scripts/plugnet-dev-update-deps.sh",
+    "plugnet-dev-version-beta": "./scripts/plugnet-dev-version-beta.sh",
+    "plugnet-dev-version-minor": "./scripts/plugnet-dev-version-minor.sh",
+    "plugnet-dev-version-patch": "./scripts/plugnet-dev-version-patch.sh",
+    "plugnet-dev-yarn-only": "./scripts/plugnet-dev-yarn-only.js"
+  },
+  "keywords": [
+    "Polkadot"
+  ],
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "maintainers": [
+    "Jaco Greeff <jacogr@gmail.com>"
+  ],
+  "contributors": [],
+  "license": "Apache-2.0",
+  "engines": {},
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polkadot-js/dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/polkadot-js/dev/issues"
+  },
+  "homepage": "https://github.com/polkadot-js/dev#readme",
+  "dependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/register": "^7.4.0",
+    "@babel/runtime": "^7.4.3",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.7.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "chalk": "^2.4.2",
+    "codeclimate-test-reporter": "^0.5.1",
+    "coveralls": "^3.0.3",
+    "cpx": "^1.5.0",
+    "jest": "^24.7.0",
+    "jest-haste-map": "^24.7.0",
+    "jest-resolve": "^24.7.0",
+    "lerna": "^3.13.1",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.14.2",
+    "typedoc-plugin-markdown": "^1.1.27",
+    "typedoc-plugin-no-inherit": "^1.1.6",
+    "typescript": "^3.4.1",
+    "vuepress": "^1.0.0-alpha.46"
+  }
+}
