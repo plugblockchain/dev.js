@@ -11,7 +11,7 @@ function run_clean () {
   echo ""
   echo "*** Running clean"
 
-  yarn run polkadot-dev-clean-build
+  yarn run plugnet-dev-clean-build
 
   echo ""
   echo "*** Checks completed"
@@ -78,13 +78,13 @@ function lerna_bump () {
 
   if [[ $TAG == *"beta"* ]]; then
     # if we have a beta version, just continue the stream of betas
-    yarn run polkadot-dev-version-beta
+    yarn run plugnet-dev-version-beta
   else
     LAST=${TAG##*.}
 
     if [[ $LAST == "0" ]]; then
       # patch is .0, so publish this as an actual release (surely we did out job on beta)
-      yarn run polkadot-dev-version-patch
+      yarn run plugnet-dev-version-patch
     else
       # non-zero patch version, continue as next beta minor
       yarn run lerna version preminor --preid beta --yes --no-git-tag-version --no-push --allow-branch '*'

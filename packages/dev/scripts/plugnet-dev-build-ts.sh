@@ -50,7 +50,7 @@ function build_js () {
   echo "*** Build completed"
 }
 
-yarn run polkadot-dev-clean-build
+yarn run plugnet-dev-clean-build
 
 cd packages
 tsc --version
