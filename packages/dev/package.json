@@ -1,6 +1,6 @@
 {
   "name": "@plugnet/dev",
-  "version": "0.30.0",
+  "version": "0.30.1",
   "description": "A collection of shared CI scripts and development environment used by @plugnet projects",
   "bin": {
     "plugnet-dev-build-babel": "./scripts/plugnet-dev-build-babel.sh",
@@ -12,6 +12,7 @@
     "plugnet-dev-travis-deploy": "./scripts/plugnet-dev-travis-deploy.sh",
     "plugnet-dev-travis-build": "./scripts/plugnet-dev-travis-build.sh",
     "plugnet-dev-update-deps": "./scripts/plugnet-dev-update-deps.sh",
+    "plugnet-dev-version": "./scripts/plugnet-dev-version.sh",
     "plugnet-dev-version-beta": "./scripts/plugnet-dev-version-beta.sh",
     "plugnet-dev-version-minor": "./scripts/plugnet-dev-version-minor.sh",
     "plugnet-dev-version-patch": "./scripts/plugnet-dev-version-patch.sh",
