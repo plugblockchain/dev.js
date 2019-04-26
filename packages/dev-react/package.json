@@ -1,13 +1,13 @@
 {
   "name": "@plugnet/dev-react",
   "version": "0.30.0",
-  "description": "A collection of shared CI scripts and development environment used by @polkadot projects",
+  "description": "A collection of shared CI scripts and development environment used by @plugnet projects",
   "keywords": [
-    "Polkadot"
+    "Plugnet-dev-react"
   ],
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [
-    "Jaco Greeff <jacogr@gmail.com>"
+    "Ian He<ian.he@centrality.ai>"
   ],
   "contributors": [],
   "license": "Apache-2.0",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/polkadot-js/dev.git"
+    "url": "git+https://github.com/plugblockchain/dev.js"
   },
   "bugs": {
-    "url": "https://github.com/polkadot-js/dev/issues"
+    "url": "https://github.com/plugblockchain/dev.js/issues"
   },
-  "homepage": "https://github.com/polkadot-js/dev#readme",
+  "homepage": "https://github.com/plugblockchain/dev.js#readme",
   "browserslist": [
     "last 2 Chrome versions",
     "last 2 Safari versions",

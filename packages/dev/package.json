@@ -19,11 +19,11 @@
     "plugnet-dev-yarn-only": "./scripts/plugnet-dev-yarn-only.js"
   },
   "keywords": [
-    "Polkadot"
+    "Plugnet-dev"
   ],
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [
-    "Jaco Greeff <jacogr@gmail.com>"
+    "Ian He<ian.he@centrality.ai>"
   ],
   "contributors": [],
   "license": "Apache-2.0",
@@ -34,12 +34,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/polkadot-js/dev.git"
+    "url": "git+https://github.com/plugblockchain/dev.js"
   },
   "bugs": {
-    "url": "https://github.com/polkadot-js/dev/issues"
+    "url": "https://github.com/plugblockchain/dev.js/issues"
   },
-  "homepage": "https://github.com/polkadot-js/dev#readme",
+  "homepage": "https://github.com/plugblockchain/dev.js#readme",
   "dependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
