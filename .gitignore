@@ -10,6 +10,7 @@ tmp/
 .env.production.local
 .npmrc
 .fossa.yml
+cc-test-reporter
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
