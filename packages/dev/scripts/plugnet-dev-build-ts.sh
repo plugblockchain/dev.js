@@ -25,7 +25,9 @@ function build_js () {
     echo ""
     echo "*** Copying static resources"
 
-    cp -f package.json build/
+    cpx package.json build
+    cpx README.md build
+    cpx ../../LICENSE build
     cpx "src/**/*.css" build
     cpx "src/**/*.svg" build
 
