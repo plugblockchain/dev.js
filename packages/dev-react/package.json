@@ -1,6 +1,6 @@
 {
   "name": "@plugnet/dev-react",
-  "version": "0.30.4",
+  "version": "0.30.5",
   "description": "A collection of shared CI scripts and development environment used by @plugnet projects",
   "keywords": [
     "Plugnet-dev-react"
@@ -34,7 +34,7 @@
     "@babel/core": "^7.4.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
-    "@plugnet/dev": "^0.30.4",
+    "@plugnet/dev": "^0.30.5",
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
     "@types/styled-components": "4.1.8",
