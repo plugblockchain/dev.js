@@ -18,5 +18,4 @@ deploy:
   provider: script
   script: ./packages/dev/scripts/plugnet-dev-travis-deploy.sh
   on:
-    branch: master
     tags: true
