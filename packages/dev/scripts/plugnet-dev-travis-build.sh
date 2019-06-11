@@ -110,150 +110,150 @@ function npm_bump () {
   echo "*** Npm increment completed"
 }
 
-# function npm_get_version () {
-#   NPM_VERSION=$(cat package.json \
-#     | grep version \
-#     | head -1 \
-#     | awk -F: '{ print $2 }' \
-#     | sed 's/[",]//g')
-# }
+function npm_get_version () {
+  NPM_VERSION=$(cat package.json \
+    | grep version \
+    | head -1 \
+    | awk -F: '{ print $2 }' \
+    | sed 's/[",]//g')
+}
 
-# function npm_publish () {
-#   echo ""
-#   echo "*** Copying package files to build"
+function npm_publish () {
+  echo ""
+  echo "*** Copying package files to build"
 
-#   rm -rf build/package.json
-#   cp LICENSE README.md package.json build/
+  rm -rf build/package.json
+  cp LICENSE README.md package.json build/
 
-#   echo ""
-#   echo "*** Publishing to npm"
+  echo ""
+  echo "*** Publishing to npm"
 
-#   VERTAG=${NPM_VERSION##*-}
-#   TAG=""
+  VERTAG=${NPM_VERSION##*-}
+  TAG=""
 
-#   if [[ $VERTAG == *"beta"* ]]; then
-#     TAG="--tag beta"
-#   fi
+  if [[ $VERTAG == *"beta"* ]]; then
+    TAG="--tag beta"
+  fi
 
-#   cd build
+  cd build
 
-#   local n=1
+  local n=1
 
-#   while true; do
-#     (yarn publish --access public --new-version $NPM_VERSION $TAG) && break || {
-#       if [[ $n -lt 5 ]]; then
-#         echo "Publish failed on attempt $n/5. Retrying in 15s."
-#         ((n++))
-#         sleep 15
-#       else
-#         echo "Publish failed on final attempt. Aborting."
-#         exit 1
-#       fi
-#     }
-#   done
+  while true; do
+    (yarn publish --access public --new-version $NPM_VERSION $TAG) && break || {
+      if [[ $n -lt 5 ]]; then
+        echo "Publish failed on attempt $n/5. Retrying in 15s."
+        ((n++))
+        sleep 15
+      else
+        echo "Publish failed on final attempt. Aborting."
+        exit 1
+      fi
+    }
+  done
 
-#   cd ..
+  cd ..
 
-#   echo ""
-#   echo "*** Npm publish completed"
-# }
+  echo ""
+  echo "*** Npm publish completed"
+}
 
-# function git_setup () {
-#   echo ""
-#   echo "*** Setting up GitHub for $TRAVIS_REPO_SLUG"
+function git_setup () {
+  echo ""
+  echo "*** Setting up GitHub for $TRAVIS_REPO_SLUG"
 
-#   git config push.default simple
-#   git config merge.ours.driver true
-#   git config user.name "Travis CI"
-#   git config user.email "$COMMIT_AUTHOR_EMAIL"
-#   git remote set-url origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git > /dev/null 2>&1
+  git config push.default simple
+  git config merge.ours.driver true
+  git config user.name "Travis CI"
+  git config user.email "$COMMIT_AUTHOR_EMAIL"
+  git remote set-url origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git > /dev/null 2>&1
 
-#   git checkout $TRAVIS_BRANCH
+  git checkout $TRAVIS_BRANCH
 
-#   echo ""
-#   echo "*** GitHub setup completed"
-# }
+  echo ""
+  echo "*** GitHub setup completed"
+}
 
-# function git_push () {
-#   echo ""
-#   echo "*** Adding build artifacts"
+function git_push () {
+  echo ""
+  echo "*** Adding build artifacts"
 
-#   git add --all .
+  git add --all .
 
-#   if [ -d "docs" ]; then
-#     git add --all -f docs
-#   fi
+  if [ -d "docs" ]; then
+    git add --all -f docs
+  fi
 
-#   echo ""
-#   echo "*** Committing changed files"
+  echo ""
+  echo "*** Committing changed files"
 
-#   git commit --no-status --quiet -m "[CI Skip] $NPM_VERSION"
+  git commit --no-status --quiet -m "[CI Skip] $NPM_VERSION"
 
-#   echo ""
-#   echo "*** Pushing to GitHub"
+  echo ""
+  echo "*** Pushing to GitHub"
 
-#   git push --quiet origin HEAD:refs/heads/$TRAVIS_BRANCH > /dev/null 2>&1
+  git push --quiet origin HEAD:refs/heads/$TRAVIS_BRANCH > /dev/null 2>&1
 
-#   echo ""
-#   echo "*** Github push completed"
-# }
+  echo ""
+  echo "*** Github push completed"
+}
 
-# function git_bump () {
-#   if [ -f "lerna.json" ]; then
-#     lerna_bump
+function git_bump () {
+  if [ -f "lerna.json" ]; then
+    lerna_bump
 
-#     if [ "$LERNA_VERSION_PRE" != "$LERNA_VERSION_POST" ]; then
-#       BUMP_VERSION="$LERNA_VERSION"
-#     fi
-#   else
-#     BUMP_VERSION="patch"
-#   fi
+    if [ "$LERNA_VERSION_PRE" != "$LERNA_VERSION_POST" ]; then
+      BUMP_VERSION="$LERNA_VERSION"
+    fi
+  else
+    BUMP_VERSION="patch"
+  fi
 
-#   if [ -n "$BUMP_VERSION" ]; then
-#     npm_bump
-#   fi
+  if [ -n "$BUMP_VERSION" ]; then
+    npm_bump
+  fi
 
-#   npm_get_version
-# }
+  npm_get_version
+}
 
-# function deploy_all () {
-#   if [ -f "node_modules/.bin/gh-pages" ]; then
-#     echo ""
-#     echo "*** Publishing to GitHub Pages"
+function deploy_all () {
+  if [ -f "node_modules/.bin/gh-pages" ]; then
+    echo ""
+    echo "*** Publishing to GitHub Pages"
 
-#     GH_PAGES_DST="."
+    GH_PAGES_DST="."
 
-#     if [ "$TRAVIS_BRANCH" == "next" ]; then
-#       GH_PAGES_DST="next"
-#     fi
+    if [ "$TRAVIS_BRANCH" == "next" ]; then
+      GH_PAGES_DST="next"
+    fi
 
-#     yarn run gh-pages --dist $GH_PAGES_SRC --dest $GH_PAGES_DST
+    yarn run gh-pages --dist $GH_PAGES_SRC --dest $GH_PAGES_DST
 
-#     echo ""
-#     echo "*** GitHub Pages completed"
-#   fi
-# }
+    echo ""
+    echo "*** GitHub Pages completed"
+  fi
+}
 
-# function loop_func () {
-#   FUNC=$1
+function loop_func () {
+  FUNC=$1
 
-#   if [ -f "lerna.json" ]; then
-#     PACKAGES=( $(ls -1d packages/*) )
+  if [ -f "lerna.json" ]; then
+    PACKAGES=( $(ls -1d packages/*) )
 
-#     for PACKAGE in "${PACKAGES[@]}"; do
-#       if [ -f "$PACKAGE/package.json" ]; then
-#         echo ""
-#         echo "*** Executing in $PACKAGE"
+    for PACKAGE in "${PACKAGES[@]}"; do
+      if [ -f "$PACKAGE/package.json" ]; then
+        echo ""
+        echo "*** Executing in $PACKAGE"
 
-#         cd $PACKAGE
-#         $FUNC
-#         cd ../..
-#       fi
-#     done
-#   else
-#     $FUNC
-#   fi
-# }
+        cd $PACKAGE
+        $FUNC
+        cd ../..
+      fi
+    done
+  else
+    $FUNC
+  fi
+}
 
 run_clean
 run_check
