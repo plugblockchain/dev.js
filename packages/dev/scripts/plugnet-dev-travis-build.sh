@@ -5,7 +5,7 @@
 
 set -e
 
-BUMP_VERSION=
+# BUMP_VERSION=
 
 function run_clean () {
   echo ""
@@ -259,13 +259,13 @@ run_clean
 run_check
 run_test
 
-if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-  git_setup
+# if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+#   git_setup
 
-  if [ "$TRAVIS_BRANCH" == "master" ]; then
-    git_bump
-  fi
-fi
+#   if [ "$TRAVIS_BRANCH" == "master" ]; then
+#     git_bump
+#   fi
+# fi
 
 run_build
 
