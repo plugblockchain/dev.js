@@ -13,9 +13,3 @@ script:
 branches:
   only:
   - master
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: ./packages/dev/scripts/plugnet-dev-travis-deploy.sh
-  on:
-    tags: true
