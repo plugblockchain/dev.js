@@ -37,16 +37,18 @@ function build_js () {
     cpx "src/**/*.d.ts" build
     cpx "src/**/*.js" build
 
-    if [ -d "../../build/src" ]; then
-      cpx "../../build/src/**/*.d.ts" build
-    fi
-    
-    if [ -d "../../build/$ROOT/src" ]; then
-      cpx "../../build/$ROOT/src/**/*.d.ts" build
-    fi
-
-    if [ -d "../../build/packages/$ROOT/src" ]; then
+    if [[ -d "../../build/packages/$ROOT/src" ]]; then
       cpx "../../build/packages/$ROOT/src/**/*.d.ts" build
+    else
+      if [[ -d "../../build/$ROOT/src" ]]; then
+        cpx "../../build/$ROOT/src/**/*.d.ts" build
+      else
+        if [[ -d "../../build/src" ]]; then
+          cpx "../../build/src/**/*.d.ts" build
+        else
+          cpx "../../build/**/*.d.ts" build
+        fi
+      fi
     fi
   fi
 
