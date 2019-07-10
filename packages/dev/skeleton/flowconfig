@@ -5,7 +5,7 @@
 [include]
 
 [libs]
-node_modules/@polkadot/plugnet/flow-typed
+node_modules/@plugnet/plugnet/flow-typed
 
 [lints]
 all=warn
