@@ -14,7 +14,7 @@
   "scripts": {
     "build": "plugnet-dev-build-ts && (cd packages/dev && copyfiles config/* scripts/* skeleton/* build) && (cd packages/dev-react && copyfiles config/* scripts/* skeleton/* build) && plugnet-dev-build-docs",
     "check": "yarn lint",
-    "lint": "tslint --project . && tsc --noEmit --pretty",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx && tsc --noEmit --pretty",
     "clean": "plugnet-dev-clean-build",
     "plugnet-dev-version-beta": "./packages/dev/scripts/plugnet-dev-version-beta.sh",
     "plugnet-dev-version-minor": "./packages/dev/scripts/plugnet-dev-version-minor.sh",
@@ -23,7 +23,7 @@
     "test": "jest --coverage"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.0",
-    "copyfiles": "^2.1.0"
+    "@babel/core": "^7.5.4",
+    "copyfiles": "^2.1.1"
   }
 }
