@@ -1,6 +1,6 @@
 {
   "name": "@plugnet/dev",
-  "version": "0.30.7",
+  "version": "0.30.8",
   "description": "A collection of shared CI scripts and development environment used by @plugnet projects",
   "bin": {
     "plugnet-dev-build-babel": "./scripts/plugnet-dev-build-babel.sh",
