@@ -6,6 +6,7 @@
     "plugnet-dev-build-babel": "./scripts/plugnet-dev-build-babel.sh",
     "plugnet-dev-build-docs": "./scripts/plugnet-dev-build-docs.sh",
     "plugnet-dev-build-ts": "./scripts/plugnet-dev-build-ts.sh",
+    "plugnet-dev-circleci-build": "./scripts/plugnet-dev-circleci-build.sh",
     "plugnet-dev-clean-branches": "./scripts/plugnet-dev-clean-branches.sh",
     "plugnet-dev-clean-build": "./scripts/plugnet-dev-clean-build.sh",
     "plugnet-dev-copy-skeleton": "./scripts/plugnet-dev-copy-skeleton.sh",
