@@ -29,6 +29,9 @@ function build_js () {
     cpx README.md build
     cpx ../../LICENSE build
     cpx "src/**/*.css" build
+    cpx "src/**/*.gif" build
+    cpx "src/**/*.jpg" build
+    cpx "src/**/*.png" build
     cpx "src/**/*.svg" build
 
     echo ""
