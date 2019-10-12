@@ -10,6 +10,8 @@
     "plugnet-dev-clean-branches": "./scripts/plugnet-dev-clean-branches.sh",
     "plugnet-dev-clean-build": "./scripts/plugnet-dev-clean-build.sh",
     "plugnet-dev-copy-skeleton": "./scripts/plugnet-dev-copy-skeleton.sh",
+    "plugnet-dev-ghact-build": "./scripts/plugnet-dev-ghact-build.sh",
+    "plugnet-dev-ghact-docs": "./scripts/plugnet-dev-ghact-docs.sh",
     "plugnet-dev-travis-deploy": "./scripts/plugnet-dev-travis-deploy.sh",
     "plugnet-dev-travis-build": "./scripts/plugnet-dev-travis-build.sh",
     "plugnet-dev-update-deps": "./scripts/plugnet-dev-update-deps.sh",
@@ -61,7 +63,7 @@
     "babel-jest": "^24.9.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "chalk": "^2.4.2",
-    "coveralls": "^3.0.6",
+    "coveralls": "^3.0.7",
     "cpx": "^1.5.0",
     "eslint": "^6.4.0",
     "eslint-config-semistandard": "^15.0.0",
@@ -70,6 +72,7 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.1.1",
     "jest": "^24.9.0",
     "jest-haste-map": "^24.9.0",
     "jest-resolve": "^24.9.0",
@@ -80,6 +83,6 @@
     "typedoc-plugin-markdown": "^2.2.6",
     "typedoc-plugin-no-inherit": "^1.1.10",
     "typescript": "^3.6.4",
-    "vuepress": "^1.1.0"
+    "vuepress": "^1.2.0"
   }
 }
